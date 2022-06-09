@@ -1,1 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter&display=swap');
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    
+    font-family: "Georgia", "Book Antiqua", serif;
+    background-image: url(../img/clean-textile.png);
+    background-color: #f4f4e8;
+}
+
+
+.wrapper{
+    
+    max-width: 1200px;
+    min-height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-areas: "header" "main" "footer";
+    grid-template-rows: minmax(250px, auto) 1fr minmax(150px, auto);
+    grid-template-columns: 1fr;
+}
+
+
+.header{
+    grid-area: header;
+    background: linear-gradient(#f4f4e8, #d8d8c1);
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    display: grid;
+   
+    grid-template-rows: minmax(60px, auto) auto 1fr;
+    grid-template-columns: minmax(auto, 50px) minmax(60px, auto) 1fr minmax(auto, 50px);
+
+}
+
+.header_logo img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+
+}
+
+.header_logo{
+   max-width: 60px;
+   max-height: 60px;
+   grid-row: 1;
+   grid-column: 2;
+   align-self: center;
+   justify-self: center;
+}
+
+ .h1{
+    font-size: calc(24px + 16 * ((100vw - 320px) / (1200 - 320)));
+    color: rgb(66, 9, 13);
+    grid-row: 1;
+    grid-column: 3;
+    align-self: center;
+    justify-self: center;
+}
+
+.header_text{
+    grid-row: 2;
+    grid-column: 1 / 5;
+
+}
+
+
+
+.main{
+    grid-area: main;
+    display: grid;
+   
+    grid-template-rows: 1fr;
+    grid-template-columns: minmax(100px, auto)  1fr;
+
+}
+
+.side_nav{
+    grid-column: 1;
+    padding: 0 10px; 
+    
+}
+
+.side_list{
+    position: sticky;
+    max-width: 150px;
+    top: 10px;
+   
+    
+}
+
+.side_minlist{
+    position: sticky;
+    max-width: 100px;
+    top: 10px;
+    display: none;
+}
+
+ul li{
+    list-style: none;
+    padding: 5px;
+    background-color: #c0c098;
+}
+
+.main a{
+    text-decoration: none;
+    color: rgb(90, 5, 11);
+    display: block;
+    width: 100%;
+}
+
+
+.m1, .m2, .m3, .m4, .m5{
+    border: solid rgb(139, 120, 65);
+    transition: all 0.1s;
+}
+
+.m1{
+    border-width: 1px 3px 3px 1px;
+    border-radius: 17px 17px 0 0;    
+}
+
+.m2, .m3, .m4{
+    border-width: 1px 3px 3px 1px;
+}
+
+.m5{
+    border-width: 1px 3px 3px 1px ;
+    border-radius: 0 0 17px 17px;
+}
+
+.m1:hover, .m2:hover, .m3:hover, .m4:hover, .m5:hover{
+    background: linear-gradient(#d8d8c1, #c0c098) ;
+}
+
+.m1:active, .m2:active, .m3:active, .m4:active, .m5:active{
+	transform: translate(0px,1px);
+    border-width: 5px 1px 1px 5px;
+    box-shadow: inset 6px 6px 20px rgba(139, 120, 65,0.5);
+}
+
+.chapter{
+    font-family: "Comforter", "Book Antiqua", serif;
+    font-size: calc(20px + 16 * ((100vw - 320px) / (1200 - 320)));
+    color: rgb(107, 93, 53);
+    padding: 20px;
+}
+
+.image1, .image2{
+    max-width: 550px;
+    max-height: 290px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.image1{
+    margin: 0 2% 2% 0;
+    float: left;
+}
+
+.image2{
+    margin: 0 0 2% 2%;
+    float: right;
+}
+
+ 
+.image1 img, .image2 img{
+    max-width: 100%;
+    transition: 0.8s;
+}
+
+.image1 img:hover, .image2 img:hover{
+    transform: scale(1.2);
+}
+
+
+.footer{
+    grid-area: footer;
+    background-color: #d8d8c1;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: grid;
+    grid-template: 1fr/ minmax(170px, auto) 1fr;
+}
+
+.btn{
+    height: fit-content;
+    width: fit-content;
+    margin: 30px;
+    border: 3px solid rgb(107, 93, 53);
+    padding: 7px 12px; 
+    background-color: rgb(107, 93, 53);
+    color: #fff;    
+    text-decoration: none; 
+    border-radius: 7px;
+    transition: 1s;
+}
+
+.btn:hover{
+    background-color: #d8d8c1;
+    color: rgb(107, 93, 53);
+}
+
+
+
+.formname{
+	max-width: 140px;
+	float: left;
+}
+
+#form_card{
+    justify-self: center;
+    align-self: center;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	border-radius: 5px;
+	margin:10px;
+	padding: 10px;
+	max-width: fit-content;
+	height:fit-content;
+}
+
+#form_card input, textarea{
+	border-radius: 5px;
+    padding: 3px;
+    margin: 5px;
+    float: right;
+}
+
+#submit{
+	height: fit-content;
+    padding: 5px;
+	
+}
+
+#form_card h2{
+	text-align: center;
+    font-size: large;
+    padding: 5px;
+}
+
+@media (max-width: 560px) {
+
+    .side_list{display: none;}
+    .side_minlist{display: grid;}
+}
+
+@media (max-width: 320px) {
+
+    .side_list{display: none;}
+    .side_minlist{display: none;}
+    .main{grid-template-columns: 1fr;}
+    .footer{grid-template-columns: 1fr;}
+    .btn{display: none;}
+
+}
 
